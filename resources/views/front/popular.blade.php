@@ -36,7 +36,11 @@
             <a href="#" class="btn">اطلاعات بیشتر</a>
         </div>
 
+        <div class="box">
+            <a href="{{route('Product.front.index')}}" class="btn ">محصولات  بیشتر</a>
+        </div>
 
     </div> <!-- box-container -->
+
 
 </section>

@@ -12,38 +12,21 @@
     <!-- cusotm css file link -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
+    <link rel="icon" href="{{asset("images/logo.PNG")}}" type="image/ico"/>
+
+
+    <!-- PWA  -->
+    <meta name="theme-color" content="#6777ef"/>
+    <link rel="apple-touch-icon" href="{{ asset("images/logo.PNG") }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+
+
 </head>
 <body>
 
 @include('front.header')
 
-
-@include('front.home')
-
-
-<!-- speciality section: start -->
-{{--@include('front.speciality')--}}
-<!-- speciality section: end -->
-
-<!-- popular section: start -->
-@include('front.popular')
-<!-- popular section: end -->
-
-<!-- steps section: start -->
-@include('front.steps')
-<!-- steps section: end -->
-
-<!-- gallery section: start -->
-@include('front.gallery')
-<!-- gallery section: end -->
-
-<!-- review section: start -->
-@include('front.review')
-<!-- review section: end -->
-
-<!-- order section: start -->
-@include('front.order')
-<!-- order section: end -->
+@yield('content')
 
 <!-- footer section: start -->
 @include('front.footer')
@@ -64,6 +47,18 @@
 
 <!-- custom js file link -->
 <script src="{{asset('js/script.js')}}"></script>
+
+
+<script src="{{ asset('/sw.js') }}"></script>
+<script>
+    if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
+    }
+</script>
+
+
 
 </body>
 </html>

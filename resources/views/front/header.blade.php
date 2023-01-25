@@ -5,12 +5,13 @@
     <div id="menu-bar" class="fas fa-bars"></div>
 
     <nav class="navbar">
-        <a href="#home">خانه</a>
-        <a href="#speciality">منو</a>
-        <a href="#popular">فروشگاه</a>
-        <a href="#gallery">گالری</a>
-        <a href="#review">نظر شما</a>
-        <a href="#comment">ارسال نظر</a>
+        <a href="{{route('index_home')}}#home">خانه</a>
+        <a href="{{route('index_home')}}#popular">فروشگاه</a>
+        <a href="{{route('index_home')}}#gallery">گالری</a>
+        <a href="{{route('index_home')}}#review">نظر شما</a>
+        <a href="{{route('index_home')}}#comment">ارسال نظر</a>
+        <a href="#">وبلاگ</a>
+
     </nav>
 
 
