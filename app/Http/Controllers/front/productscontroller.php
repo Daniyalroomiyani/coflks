@@ -11,4 +11,9 @@ class productscontroller extends Controller
     {
         return view('front.shop.productList');
     }
+
+    public function show_post(int $id)
+    {
+        return view('front.shop.item');
+    }
 }

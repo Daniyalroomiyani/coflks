@@ -104,7 +104,7 @@ Route::namespace('App\Http\Controllers\front')->group(function () {
         //products
         Route::prefix('product')->group(function (){
             Route::get('/', 'productscontroller@index')->name('Product.front.index');
-//            Route::get('/{id}', 'productscontroller@show_post')->name('product.front.post');
+            Route::get('/{id}', 'productscontroller@show_post')->name('product.front.post');
 //            //category
 //            Route::prefix('category')->group(function () {
 //                Route::get('/{id}', 'productscontroller@Show_category_post')->name('product.front.post.cats');
