@@ -10,7 +10,7 @@
         <a href="{{route('index_home')}}#gallery">گالری</a>
         <a href="{{route('index_home')}}#review">نظر شما</a>
         <a href="{{route('index_home')}}#comment">ارسال نظر</a>
-        <a href="#">وبلاگ</a>
+        <a href="{{route('feed_list_front')}}">وبلاگ</a>
 
     </nav>
 

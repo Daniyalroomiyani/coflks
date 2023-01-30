@@ -38,20 +38,20 @@ Route::namespace('App\Http\Controllers\front')->group(function () {
 //    Route::post('/contactus', 'ContacController@contact_save')->name('contactus_save');
 //    //Route::get('/thanks' , 'ContacController@thanks')->name('thanks');
 //
-//    //Feeds(blog)
-//    Route::prefix('blog')->group(function () {
-//        Route::get('/', 'FeedController@index')->name('feed_list_front');
+    //Feeds(blog)
+    Route::prefix('blog')->group(function () {
+        Route::get('/', 'blogController@index')->name('feed_list_front');
 //        Route::get('/{id}', 'FeedController@show_post')->name('feed_show_post');
-//
+
 //        //category
 //        Route::prefix('category')->group(function () {
 //            Route::get('/{id}', 'FeedController@Show_category_post')->name('feed_Show_category_post');
 //
 //        });
-//
-//
-//    });
-//
+
+
+    });
+
 //
 //    //branches
 //    Route::prefix('branch')->group(function () {
