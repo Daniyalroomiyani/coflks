@@ -4,14 +4,16 @@
     <div class="row">
 
         <div class="image">
-            <img  src="{{asset('images/order-img.png')}}" alt="فرشاد حسنپور">
+            <img  src="{{asset('storage/images/site/' . $item->pics['down'])}}" alt="فرشاد حسنپور">
         </div>
 
-        <form style="padding-top: 10%" action="">
+        <form style="padding-top: 10%" action="{{route('save_comment')}}" method="post">
+            {{ csrf_field()  }}
 
+            @include('Admin.error')
             <div class="inputBox">
-                <input type="text" placeholder="نام">
-                <input type="number" placeholder="نمره(1-5)">
+                <input type="text" name="name" required placeholder="نام">
+                <input type="number" name="rate"  required placeholder="نمره(1-5)">
             </div>
 
 {{--            <div class="inputBox">--}}

@@ -2,53 +2,26 @@
     <h1 class="heading"> <span> نظرات </span> مشتریان </h1>
     <div class="box-container">
 
+
+        @foreach($comments as $cm )
         <div class="box">
-            <img src="images/pic1.png" alt="">
-            <h3>خانم پروفسور</h3>
+            <h3>{{$cm->name}}</h3>
             <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
+                @for( $i = 0 ; $i<$cm->rate ;$i++)
+                    <i class="fas fa-star"></i>
+                @endfor
+                @for( $i = $cm->rate ; $i<5 ;$i++)
+                    <i class="far fa-star"></i>
+                @endfor
+
             </div>
             <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+              {{$cm->msg}}
             </p>
         </div>
 
-        <div class="box">
-            <img src="images/pic2.png" alt="">
-            <h3>آقای دکتر</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-            </p>
-        </div>
+        @endforeach
 
-        <div class="box">
-            <img src="images/pic3.png" alt="">
-            <h3>خانم مهندس</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-            </p>
-        </div>
 
     </div> <!-- box-container -->
 </section>

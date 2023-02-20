@@ -3,6 +3,8 @@
 
 @section('content')
 
+
+
     @include('front.home')
 
 
@@ -25,6 +27,7 @@
     <!-- review section: start -->
     @include('front.review')
     <!-- review section: end -->
+
 
     <!-- order section: start -->
     @include('front.order')
