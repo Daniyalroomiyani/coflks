@@ -92,7 +92,7 @@ class productController extends Controller
             $item = Product::find($id);
 
             if ($request->has('pic')) {
-                $data['pic'] = $request->file('pic')->getClientOriginalName();
+                $item->pic = $request->file('pic')->getClientOriginalName();
                 $request->file('pic')->move(storage_path('app/public/images/shop/product'), $request->file('pic')->getClientOriginalName());
             }
 
