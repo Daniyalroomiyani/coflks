@@ -102,7 +102,7 @@ Route::post('/login', 'App\Http\Controllers\admin\adminController@Dologin')->nam
 Route::prefix('panel')->middleware("guest")->group(function () {
 
 //User-->
-    Route::namespace('App\Http\Controllers\admin')->middleware('admin')->group(function () {
+    Route::namespace('App\Http\Controllers\admin')->group(function () {
         Route::get('/register', 'adminController@register')->name('register');
         Route::post('/register', 'adminController@Doregister')->name('do_register');
         Route::get('/userlist', 'adminController@userlist')->name('userlist');
@@ -255,26 +255,26 @@ Route::prefix('panel')->middleware("guest")->group(function () {
 //    });
 //
 //
-//    //Products
-//    Route::namespace('App\Http\Controllers\admin')->prefix('Product')->group(function () {
-//
-//        Route::get('/', 'ProductController@index')->name('list_Product');
-//        Route::get('/add', 'ProductController@add')->name('add_Product');
-//        Route::post('/add', 'ProductController@save')->name('save_Product');
-//        Route::get('/edit/{id}', 'ProductController@edit')->name('edit_Product');
-//        Route::post('/edit/{id}', 'ProductController@edit_save')->name('edit_save_Product');
-//        Route::get('/del/{id}', 'ProductController@del')->name('del_Product');
-//    });
-//    //category_Products
-//    Route::namespace('App\Http\Controllers\admin')->prefix('Product/category_for_products')->group(function () {
-//
-//        Route::get('/', 'category_for_productsController@index')->name('list_category_for_products');
-//        Route::get('/add', 'category_for_productsController@add')->name('add_category_for_products');
-//        Route::post('/add', 'category_for_productsController@save')->name('save_category_for_products');
-//        Route::get('/edit/{id}', 'category_for_productsController@edit')->name('edit_category_for_products');
-//        Route::post('/edit/{id}', 'category_for_productsController@edit_save')->name('edit_save_category_for_products');
-//        Route::get('/del/{id}', 'category_for_productsController@del')->name('del_category_for_products');
-//    });
+    //Products
+    Route::namespace('App\Http\Controllers\admin')->prefix('Product')->group(function () {
+
+        Route::get('/', 'ProductController@index')->name('list_Product');
+        Route::get('/add', 'ProductController@add')->name('add_Product');
+        Route::post('/add', 'ProductController@save')->name('save_Product');
+        Route::get('/edit/{id}', 'ProductController@edit')->name('edit_Product');
+        Route::post('/edit/{id}', 'ProductController@edit_save')->name('edit_save_Product');
+        Route::get('/del/{id}', 'ProductController@del')->name('del_Product');
+    });
+    //category_Products
+    Route::namespace('App\Http\Controllers\admin')->prefix('Product/category_for_products')->group(function () {
+
+        Route::get('/', 'category_for_productsController@index')->name('list_category_for_products');
+        Route::get('/add', 'category_for_productsController@add')->name('add_category_for_products');
+        Route::post('/add', 'category_for_productsController@save')->name('save_category_for_products');
+        Route::get('/edit/{id}', 'category_for_productsController@edit')->name('edit_category_for_products');
+        Route::post('/edit/{id}', 'category_for_productsController@edit_save')->name('edit_save_category_for_products');
+        Route::get('/del/{id}', 'category_for_productsController@del')->name('del_category_for_products');
+    });
 //
 //
 //    //Orders

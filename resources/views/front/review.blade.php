@@ -4,6 +4,7 @@
 
 
         @foreach($comments as $cm )
+            @if($cm->seen)
         <div class="box">
             <h3>{{$cm->name}}</h3>
             <div class="stars">
@@ -19,7 +20,7 @@
               {{$cm->msg}}
             </p>
         </div>
-
+            @endif
         @endforeach
 
 

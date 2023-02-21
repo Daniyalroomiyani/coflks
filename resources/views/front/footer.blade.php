@@ -1,14 +1,12 @@
 <section class="footer">
 
     <div class="share">
-        <a href="#" class="btn">facebook</a>
-        <a href="#" class="btn">twitter</a>
-        <a href="{{$item->instagram}}" class="btn">instagram</a>
-        <a href="{{$item->telegram}}" class="btn">telegram</a>
-        <a href="{{$item->phone}}" class="btn">phone</a>
-        <a href="{{$item->Email}}" class="btn">{{$item->Email}}</a>
+        <a href=" instagram.com/{{$item->instagram}}" class="btn"><i><span class="fa fa-instagram"> {{$item->instagram}}</span></i></a>
+        <a href="{{$item->telegram}}" class="btn"><i><span class="fa fa-telegram"> {{$item->telegram}}</span></i></a>
+        <a href=" tel:{{$item->phone}}" class="btn"><i><span class="fa fa-phone"> {{$item->phone}}</span></i></a>
+        <a href="{{$item->Email}}" class="btn"><i><span class="fa fa-mail-bulk"> {{$item->Email}}</span></i></a>
     </div>
 
-{{--    <h1 class="credit"> طراحی توسط <span> مجید حیدری نسب </span> </h1>--}}
+    <link href="{{asset("vendors/font-awesome/css/font-awesome.min.css")}}" rel="stylesheet">
 
 </section>

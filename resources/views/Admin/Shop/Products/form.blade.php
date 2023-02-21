@@ -75,58 +75,39 @@
                                                        required="required" type="text">
                                             </div>
                                         </div>
+
+
                                         <div class="item form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NumbersToPlay">تعداد
-                                                افراد (n - n )
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cat_id">وزن
+
 
                                             </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="NumbersToPlay" class="form-control col-md-7 col-xs-12"
-                                                       data-validate-length-range="6" data-validate-words="2"
-                                                       name="NumbersToPlay"
-                                                       value="{{ old('NumbersToPlay',isset($item) ? $item->NumbersToPlay: '') }}"
-                                                      type="text">
-                                            </div>
-                                        </div>
-                                        <div class="item form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="timeToPlay">مدت زمانی بازی
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <select name="weight" class="form-control select-city"
+                                                        id="city_id">
 
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="timeToPlay" class="form-control col-md-7 col-xs-12"
-                                                       data-validate-length-range="6" data-validate-words="2"
-                                                       name="timeToPlay"
-                                                       value="{{ old('timeToPlay',isset($item) ? $item->timeToPlay: '') }}"
-                                                      type="text">
-                                            </div>
-                                        </div>
+                                                    <option  value="1"  {{isset($item) && $item->weight->id == 1?'selected' :''}}>250 گرم</option>
+                                                    <option  value="2" {{isset($item) && $item->weight->id == 2?'selected' :''}}>500 گرم</option>
+                                                    <option  value="2" {{isset($item) && $item->weight->id == 3?'selected' :''}}>750 گرم</option>
+                                                    <option  value="4" {{isset($item) && $item->weight->id == 4?'selected' :''}}>1 کیلوگرم</option>
+                                                </select>
 
-       <div class="item form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Age">رده سنی (n سال به بالا)
-
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="Age" class="form-control col-md-7 col-xs-12"
-                                                       data-validate-length-range="6" data-validate-words="2"
-                                                       name="Age"
-                                                       value="{{ old('Age',isset($item) ? $item->Age: '') }}"
-                                                       type="text">
                                             </div>
                                         </div>
 
 
                                         <div class="item form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="category[]">دسته
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cat_id">دسته
                                                 بندی
 
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12 ">
-                                                <select name="category[]" class="form-control select-city"
-                                                        multiple="multiple" id="city_id">
+                                                <select name="cat_id" class="form-control select-city"
+                                                        id="city_id">
 
                                                     @foreach($cats as $i)
                                                         <option
-                                                            value="{{  $i->id }}" {{isset($item)? (in_array($i->id , $select_ids)) ? 'selected' : '' : ''}} >{{ $i->name  }}</option>
+                                                            value="{{  $i->id }}" {{isset($item)&& $i->id == $selected->id ? 'selected' : '' }} >{{ $i->name  }}</option>
                                                     @endforeach
                                                 </select>
 
@@ -147,25 +128,40 @@
                                             </div>
                                         </div>
 
-                                        @if(!isset($item))
 
-                                            @for($i = 1 ; $i<=3 ; $i++)
+                                        <div class="item form-group">
+                                            <label for="pic"
+                                                   class="control-label col-md-3">عکس </label>
+                                            <div class="btn-group col-md-6 col-sm-6 col-xs-12">
 
+                                                <input type="file" data-role="magic-overlay"
+                                                       data-target="#pictureBtn"
+                                                       name="pic" id="pic"
+                                                       data-edit="insertImage"/>
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label for="pic"
+                                                   class="control-label col-md-3">درصد </label>
+                                            <div class="col-md-4  col-sm-12 col-xs-12">
+                                                <p>عربیکا </p>
+                                                <input class="knob" data-width="100" data-height="120"
+                                                       data-angleOffset=-125 name="arabica"
+                                                       value="{{ old('arabica',isset($item) ? $item->arabica: '') }}"
 
-                                                <div class="item form-group">
-                                                    <label for="{{'pic'.$i}}"
-                                                           class="control-label col-md-3">عکس </label>
-                                                    <div class="btn-group col-md-6 col-sm-6 col-xs-12">
+                                                       data-angleArc=250 data-fgColor="#34495E"
+                                                       data-rotation="anticlockwise" value="35">
+                                            </div>
+                                            <div class="col-md-4  col-sm-12 col-xs-12">
+                                                <p>ربوستا </p>
+                                                <input class="knob" data-width="100" data-height="120"
+                                                       data-angleOffset=-125 name="robusta"
+                                                       value="{{ old('robusta',isset($item) ? $item->robusta: '') }}"
 
-                                                        <input type="file" data-role="magic-overlay"
-                                                               data-target="#pictureBtn"
-                                                               name="{{'pic'.$i}}" id="{{'pic'.$i}}"
-                                                               data-edit="insertImage"/>
-                                                    </div>
-                                                </div>
-
-                                            @endfor
-                                        @endif
+                                                       data-angleArc=250 data-fgColor="#34495E"
+                                                       data-rotation="anticlockwise" value="35">
+                                            </div>
+                                        </div>
 
 
                                         <div class="ln_solid"></div>
@@ -185,18 +181,12 @@
                                         <div class="panel-heading">تصویر</div>
                                         <div class="panel-body  ">
 
-                                            @if(isset($item))
-                                                @foreach($item->pic as $pic)
-                                                    <div class="col-md-4 col-sm-4 col-xs-12">
-                                                        <img
-                                                            class="img-responsive img-rounded justify-content-center image center-margin "
-                                                            name="picture" alt="تصویر بازی "
-                                                            src="{{old('picture' , isset($pic)? asset('storage/images/shop/product').'/'.$pic:'')}}">
-                                                    </div>
-                                                @endforeach
-
-                                            @endif
-
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <img
+                                                    class="img-responsive img-rounded justify-content-center image center-margin "
+                                                    name="picture" alt="تصویر کافکس "
+                                                    src="{{old('picture' , isset($item->pic)? asset('storage/images/shop/product').'/'.$item->pic:'')}}">
+                                            </div>
 
                                             <form class="form-horizontal form-label-left col-md-12 col-sm-12 col-xs-12 "
                                                   action="" method="post"
@@ -205,24 +195,22 @@
                                                 <span class="section">عکس ها</span>
 
 
-                                                @for($i = 1 ; $i<=3 ; $i++)
-                                                    <div class="btn-group col-md-4 col-sm-4 col-xs-12">
+                                                <div class="btn-group col-md-12 col-sm-12 col-xs-12">
 
-                                                        <div class="item form-group">
-                                                            <label for="{{'pic'.$i}}"
-                                                                   class="control-label col-md-3">عکس </label>
-                                                            <div class="btn-group col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="item form-group">
+                                                        <label for="pic"
+                                                               class="control-label col-md-3">عکس </label>
+                                                        <div class="btn-group col-md-12 col-sm-12 col-xs-12">
 
-                                                                <input type="file" data-role="magic-overlay"
-                                                                       data-target="#pictureBtn"
-                                                                       value="{{ old('pic'.$i,(isset($item) &&count($item->pic)>=$i )  ? $item->pic[$i-1]: '') }}"
+                                                            <input type="file" data-role="magic-overlay"
+                                                                   data-target="#pictureBtn"
+                                                                   value="{{ old('pic',(isset($item)   ? $item->pic: '')) }}"
 
-                                                                       name="{{'pic'.$i}}" id="{{'pic'.$i}}"
-                                                                       data-edit="insertImage"/>
-                                                            </div>
+                                                                   name="pic" id="pic"
+                                                                   data-edit="insertImage"/>
                                                         </div>
                                                     </div>
-                                                @endfor
+                                                </div>
 
 
                                                 <div class="ln_solid"></div>

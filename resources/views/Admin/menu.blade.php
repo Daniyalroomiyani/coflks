@@ -31,6 +31,32 @@
                 </ul>
             </li>
 
+            <li><a><i class="fa fa-shopping-basket"></i> فروشگاه <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+
+                    <li><a>محصولات<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="{{route('list_Product')}}">لیست محصولات</a>
+                            </li>
+                            <li><a href="{{route('add_Product')}}">افزودن محصول</a>
+                            </li>
+                            <li><a href="{{route('list_category_for_products')}}">مدیریت دسته بندی ها</a>
+                            </li>
+                        </ul>
+                    </li>
+
+{{--                    <li><a>سفارشات<span class="fa fa-chevron-down"></span></a>--}}
+{{--                        <ul class="nav child_menu">--}}
+{{--                            <li class="sub_menu"><a href="{{route('list_Order')}}">لیست سفارش ها</a>--}}
+{{--                            </li>--}}
+
+{{--                        </ul>--}}
+{{--                    </li>--}}
+                </ul>
+            </li>
+
+
+
             <li><a href="{{route('list_comment')}}"><i class="fa fa-comment-o"></i> نظرات  <span class="fa "></span></a>
 
 

@@ -54,7 +54,7 @@
 
 
                         <div>
-                            <h1><i class="fa fa-paw"></i> NooGame </h1>
+                            <h1><i class="fa fa-coffee"></i> Coflks </h1>
                         </div>
                     </div>
                 </form>

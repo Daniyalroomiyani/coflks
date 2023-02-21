@@ -2,109 +2,31 @@
 
 
 @section('content')
+    <h1 class="heading"><span>قهوه های </span> آبی </h1>
 
+
+    @foreach($cats as $c)
     <section class="popular" id="popular">
-        <h1 class="heading"><span>قهوه های </span> آبی </h1>
+
+
+        <h1 class="heading"><span>{{$c->name}}</span>  </h1>
         <div class="box-container">
 
+            @foreach($c->products()->get() as $pr)
 
-            <div class="box">
-                <span class="price"> {{number_format(50000) }} تومان</span>
-                <img src="{{asset('images/p-1.jpg')}}" alt="">
-                <h3> 100 عربیکا</h3>
+                <div class="box">
+                    <span class="price"> {{number_format($pr->price) }} تومان</span>
+                    <img src="{{asset('storage/images/shop/product').'/'.$pr->pic}}" alt="">
+                    <h3>  {{$pr->name }} -- {{$pr->weight->name}}</h3>
 
-                <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
-            </div>
-  <div class="box">
-                <span class="price"> {{number_format(50000) }} تومان</span>
-                <img src="{{asset('images/p-1.jpg')}}" alt="">
-                <h3> 100 عربیکا</h3>
-
-                <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
-            </div>
+                    <a href="#" class="btn">خرید</a>
+                    <a href="#" class="btn">اطلاعات بیشتر</a>
+                </div>
+            @endforeach
 
         </div> <!-- box-container -->
-
     </section>
+    @endforeach
 
-    <section class="popular" id="popular">
-        <h1 class="heading"><span>قهوه  </span>  </h1>
-        <div class="box-container">
-
-
-            <div class="box">
-                <span class="price"> {{number_format(50000) }} تومان</span>
-                <img src="{{asset('images/p-1.jpg')}}" alt="">
-                <h3> 100 عربیکا</h3>
-
-                <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
-            </div> <div class="box">
-                <span class="price"> {{number_format(50000) }} تومان</span>
-                <img src="{{asset('images/p-1.jpg')}}" alt="">
-                <h3> 100 عربیکا</h3>
-
-                <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
-            </div> <div class="box">
-                <span class="price"> {{number_format(50000) }} تومان</span>
-                <img src="{{asset('images/p-1.jpg')}}" alt="">
-                <h3> 100 عربیکا</h3>
-
-                <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
-            </div> <div class="box">
-                <span class="price"> {{number_format(50000) }} تومان</span>
-                <img src="{{asset('images/p-1.jpg')}}" alt="">
-                <h3> 100 عربیکا</h3>
-
-                <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
-            </div>
-
-        </div> <!-- box-container -->
-
-    </section>
-
-    <section class="popular" id="popular">
-        <h1 class="heading"><span>هات چاکلت  </span>  </h1>
-        <div class="box-container">
-
-
-            <div class="box">
-                <span class="price"> {{number_format(50000) }} تومان</span>
-                <img src="{{asset('images/p-1.jpg')}}" alt="">
-                <h3> 100 عربیکا</h3>
-
-                <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
-            </div> <div class="box">
-                <span class="price"> {{number_format(50000) }} تومان</span>
-                <img src="{{asset('images/p-1.jpg')}}" alt="">
-                <h3> 100 عربیکا</h3>
-
-                <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
-            </div> <div class="box">
-                <span class="price"> {{number_format(50000) }} تومان</span>
-                <img src="{{asset('images/p-1.jpg')}}" alt="">
-                <h3> 100 عربیکا</h3>
-
-                <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
-            </div> <div class="box">
-                <span class="price"> {{number_format(50000) }} تومان</span>
-                <img src="{{asset('images/p-1.jpg')}}" alt="">
-                <h3> 100 عربیکا</h3>
-
-                <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
-            </div>
-
-        </div> <!-- box-container -->
-
-    </section>
 
 @endsection

@@ -41,7 +41,7 @@
                                     <td>{{$item->count}}</td>
                                     <td>
                                         @if($item->count>0)
-                                        <a  title="ثبت دستی سفارش" href="{{route('add_Order' , $item->id)}}"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+{{--                                        <a  title="ثبت دستی سفارش" href="{{route('add_Order' , $item->id)}}"><i class="glyphicon glyphicon-shopping-cart"></i></a>--}}
 
                                         @endif
                                         <a href="{{route('edit_Product' , $item->id)}}"><i class="glyphicon glyphicon-edit"></i></a>

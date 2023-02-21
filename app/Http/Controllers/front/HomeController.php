@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\comment;
 use App\Models\Config;
 use App\Models\gallery;
+use App\Models\product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -38,6 +39,7 @@ class HomeController extends Controller
 //dd($item->pics);
         $pictures = gallery::all();
         $comments = comment::all();
-        return view('front.mainPage' , compact('item' , 'pictures' , 'comments'));
+        $products =product::all();
+        return view('front.mainPage' , compact('item' , 'pictures' , 'comments' ,'products'));
     }
 }

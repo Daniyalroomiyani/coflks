@@ -27,7 +27,6 @@
                             <thead >
                             <tr>
                                 <th class="text-center">عنوان</th>
-                                <th class="text-center">آخرین تغیر توسط</th>
                                 <th class="text-center">عملیات</th>
                             </tr>
                             </thead>
@@ -37,10 +36,9 @@
                             @foreach($items as $item)
                                 <tr>
                                     <td>{{$item->name}}</td>
-                                    <td>{{$item->last_edit}}</td>
                                     <td>
-                                        <a href="{{route('edit_Category' , $item->id)}}"><i class="glyphicon glyphicon-edit"></i></a>
-                                        <a href="{{route('del_Category',$item->id)}}"><i class="glyphicon glyphicon-trash"></i></a>
+                                        <a href="{{route('edit_save_category_for_products' , $item->id)}}"><i class="glyphicon glyphicon-edit"></i></a>
+                                        <a href="{{route('del_category_for_products',$item->id)}}"><i class="glyphicon glyphicon-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
