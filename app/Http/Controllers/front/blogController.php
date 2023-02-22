@@ -4,6 +4,7 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Config;
+use App\Models\feed;
 use Illuminate\Http\Request;
 
 class blogController extends Controller
@@ -33,7 +34,7 @@ class blogController extends Controller
             ]);
 
         $item = $config[0];
-
-        return view('front.blog.list' , compact('item'));
+        $feeds=feed::all();
+        return view('front.blog.list' , compact('item' , 'feeds'));
     }
 }

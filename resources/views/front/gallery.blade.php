@@ -9,7 +9,7 @@
                 <div class="content">
                     <h3>{{$pic->title}}</h3>
                     <p>
-                        {{$pic->about}}
+                        {{\Illuminate\Support\Str::limit($pic->about ,200)}}
                     </p>
                 </div>
             </div>

@@ -46,11 +46,11 @@ Route::namespace('App\Http\Controllers\front')->group(function () {
         Route::prefix('product')->group(function (){
             Route::get('/', 'productscontroller@index')->name('Product.front.index');
             Route::get('/{id}', 'productscontroller@show_post')->name('product.front.post');
-//            //category
-//            Route::prefix('category')->group(function () {
-//                Route::get('/{id}', 'productscontroller@Show_category_post')->name('product.front.post.cats');
-//
-//            });
+            //category
+            Route::prefix('category')->group(function () {
+                Route::get('/{id}', 'productscontroller@Show_category_post')->name('product.front.post.cats');
+
+            });
         });
 //        //orders
 //        Route::prefix('order')->group(function (){
@@ -169,29 +169,28 @@ Route::prefix('panel')->middleware("guest")->group(function () {
 //
 //
 //    });
-////category
-//    Route::namespace('App\Http\Controllers\admin')->prefix('category')->group(function () {
-//
-//        Route::get('/', 'Categoryconteoller@index')->name('list_Category');
-//        Route::get('/add', 'Categoryconteoller@add')->name('add_Category');
-//        Route::post('/add', 'Categoryconteoller@save')->name('save_Category');
-//        Route::get('/edit{id}', 'Categoryconteoller@edit')->name('edit_Category');
-//        Route::post('/edit{id}', 'Categoryconteoller@edit_save')->name('edit_save_Category');
-//        Route::get('/del{id}', 'Categoryconteoller@del')->name('del_Category');
-//    });
-////Feeds
-//    Route::namespace('App\Http\Controllers\admin')->prefix('feed')->group(function () {
-//
-//        Route::get('/', 'Feedcontroller@index')->name('list_Feed');
-//        Route::get('/add', 'Feedcontroller@add')->name('add_Feed');
-//        Route::post('/add', 'Feedcontroller@save')->name('save_Feed');
-//        Route::get('/edit{id}', 'Feedcontroller@edit')->name('edit_Feed');
-//        Route::post('/edit{id}', 'Feedcontroller@edit_save')->name('edit_save_Feed');
-//        Route::get('/del{id}', 'Feedcontroller@del')->name('del_Feed');
-//
-//
-//    });
-//
+//category --feeds
+    Route::namespace('App\Http\Controllers\admin')->prefix('category')->group(function () {
+
+        Route::get('/', 'CategoryForFeedcontroller@index')->name('list_CategoryFeed');
+        Route::get('/add', 'CategoryForFeedcontroller@add')->name('add_CategoryFeed');
+        Route::post('/add', 'CategoryForFeedcontroller@save')->name('save_CategoryFeed');
+        Route::get('/edit{id}', 'CategoryForFeedcontroller@edit')->name('edit_CategoryFeed');
+        Route::post('/edit{id}', 'CategoryForFeedcontroller@edit_save')->name('edit_save_CategoryFeed');
+        Route::get('/del{id}', 'CategoryForFeedcontroller@del')->name('del_CategoryFeed');
+    });
+//Feeds
+    Route::namespace('App\Http\Controllers\admin')->prefix('feed')->group(function () {
+
+        Route::get('/', 'Feedcontroller@index')->name('list_Feed');
+        Route::get('/add', 'Feedcontroller@add')->name('add_Feed');
+        Route::post('/add', 'Feedcontroller@save')->name('save_Feed');
+        Route::get('/edit{id}', 'Feedcontroller@edit')->name('edit_Feed');
+        Route::post('/edit{id}', 'Feedcontroller@edit_save')->name('edit_save_Feed');
+        Route::get('/del{id}', 'Feedcontroller@del')->name('del_Feed');
+
+
+    });
 
     // Gallery
     Route::namespace('App\Http\Controllers\admin')->prefix('gallery')->group(function () {

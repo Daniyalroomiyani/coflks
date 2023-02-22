@@ -104,7 +104,7 @@
                                     <div class="panel panel-info text-center ">
                                         <div class="panel-heading">تصویر</div>
                                         <div class="panel-body  ">
-                                            <img class="img-responsive img-rounded justify-content-center image center-margin"  name="picture" alt="تصویر بازی " src="{{old('picture' , isset($item)? asset('storage/images/feeds').'/'.$item->pic:'')}}" >
+                                            <img class="img-responsive img-rounded justify-content-center image center-margin"  name="picture" alt="تصویر خبر " src="{{old('picture' , isset($item)? asset('storage/images/feeds').'/'.$item->pic:'')}}" >
 
                                         </div>
                                     </div>

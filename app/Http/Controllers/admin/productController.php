@@ -87,9 +87,10 @@ class productController extends Controller
 
     public function edit_save(Request $request, int $id)
     {
+        $item = Product::find($id);
+
 
         if ($request->files->count() > 0) {
-            $item = Product::find($id);
 
             if ($request->has('pic')) {
                 $item->pic = $request->file('pic')->getClientOriginalName();
@@ -116,9 +117,6 @@ class productController extends Controller
                 'count.required' => 'ورود تعداد موجود الزامی است.',
                 'cat_id.required' => 'ورود دسته بندی  الزامی است.',
             ]);
-
-
-        $item = Product::find($id);
 
 
         $item->name = $request->input('name');

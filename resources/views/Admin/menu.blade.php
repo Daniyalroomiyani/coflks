@@ -55,7 +55,15 @@
                 </ul>
             </li>
 
+            <li><a><i class="fa fa-newspaper-o"></i> اخبار <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{route('list_Feed')}}">لیست</a></li>
+                    <li><a href="{{route('add_Feed')}}">افزودن</a></li>
+                    <li><a href="{{route('list_CategoryFeed')}}">دسته بندی ها</a></li>
 
+
+                </ul>
+            </li>
 
             <li><a href="{{route('list_comment')}}"><i class="fa fa-comment-o"></i> نظرات  <span class="fa "></span></a>
 
