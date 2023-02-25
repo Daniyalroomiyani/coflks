@@ -77,18 +77,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="item form-group">
-                                        <label for="password" class="control-label col-md-3">سطح دسترسی <span
-                                                class="required">*</span></label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            @if(isset($item) && $item->admin)
-                                                    <input type="checkbox"  id="adminckeck" name="adminckeck"  checked/> مدیر
-                                            @else
-                                                <input type="checkbox"  id="adminckeck" name="adminckeck" /> مدیر
-                                            @endif
-
-                                        </div>
-                                    </div>
+                                    
 
                                     <div class="item form-group">
                                         <label for="pic" class="control-label col-md-3">عکس </label>

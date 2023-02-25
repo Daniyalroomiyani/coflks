@@ -27,9 +27,7 @@
                         <tr>
                             <th class="text-center">نام</th>
                             <th class="text-center">نام خانوادگی</th>
-                            <th class="text-center">نقش</th>
                             <th class="text-center">ایمیل</th>
-                            <th class="text-center">ایجاد شده توسط</th>
                             <th class="text-center">عملیات</th>
                         </tr>
                         </thead>
@@ -40,15 +38,8 @@
                         <tr>
                             <td>{{$user->firstname}}</td>
                             <td>{{$user->lastname}}</td>
-                            <td>
-                                @if($user->admin)
-                                    مدیر
-                                @else
-                                اوپراتور
-                                    @endif
-                            </td>
+
                             <td>{{$user->email}}</td>
-                            <td>{{$user->creator}}</td>
                             <td><a href="{{route('edit' , $user->id)}}"><i class="glyphicon glyphicon-edit"></i></a>
                             <a href="{{route('delete',$user->id)}}"><i class="glyphicon glyphicon-trash"></i></a></td>
                         </tr>

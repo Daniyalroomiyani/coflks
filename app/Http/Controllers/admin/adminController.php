@@ -74,12 +74,7 @@ class adminController extends Controller
             'email'=>$request->input('email'),
             'password'=>$request->input('password'),
         ];
-        if ($request->has('adminckeck'))
-            $userdata['admin'] =true ;
 
-        if(Auth::check()){
-            $userdata['creator'] = Auth::user()->firstname  . " ". Auth::user()->lastname;
-        }
         if($request->files->count()>0){
             $userdata['pic']= $request->file('pic')->getClientOriginalName();
             $request->file('pic')->move(storage_path('app/public/images') , $request->file('pic')->getClientOriginalName());
@@ -126,12 +121,7 @@ class adminController extends Controller
             'email'=>$request->input('email'),
             'password'=>$request->input('password'),
         ];
-        if ($request->has('adminckeck'))
-            $userdata['admin'] =true ;
 
-        if(Auth::check()){
-            $userdata['creator'] = Auth::user()->firstname  . " ". Auth::user()->lastname;
-        }
         if($request->files->count()>0){
             $userdata['pic']= $request->file('pic')->getClientOriginalName();
             $request->file('pic')->move(storage_path('app/public/images') , $request->file('pic')->getClientOriginalName());
@@ -194,10 +184,7 @@ class adminController extends Controller
         $user->firstname = $request->input('firstname');
         $user->lastname = $request->input('lastname');
         $user->email = $request->input('email');
-        if ($request->has('adminckeck'))
-            $user->admin = true;
-        else
-            $user->admin =false;
+
         if($request->files->count()>0){
             $user->pic= $request->file('pic')->getClientOriginalName();
             $request->file('pic')->move(storage_path('app/public/images') , $request->file('pic')->getClientOriginalName());
