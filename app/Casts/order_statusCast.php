@@ -4,7 +4,7 @@ namespace App\Casts;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
-class machineCast implements CastsAttributes
+class order_statusCast implements CastsAttributes
 {
     /**
      * Cast the given value.
@@ -17,10 +17,16 @@ class machineCast implements CastsAttributes
      */
     public function get($model, string $key, $value, array $attributes)
     {
-        return $value;
+        $a = [
+            'send' => 'ارسال شده',
+            'process' => 'در حال پردازش',
+            'wait_for_payment' => 'در انتظار پرداخت',
+            'cancel' => 'لغو شده',
+        ];
+        return $a[$value];
     }
 
-    /**
+        /**
      * Prepare the given value for storage.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
@@ -31,17 +37,6 @@ class machineCast implements CastsAttributes
      */
     public function set($model, string $key, $value, array $attributes)
     {
-        $a = [
-            '1'=>'صنعتی',
-            '2'=>'نیمه صنعتی',
-            '3'=>'خانگی',
-            '4'=>'موکاپات',
-            '5'=>'V60',
-            '6'=>'مکس',
-            '7'=>'سایفون',
-            '8'=>'فرانسه',
-        ];
-        return $a[$value];
         return $value;
     }
 }

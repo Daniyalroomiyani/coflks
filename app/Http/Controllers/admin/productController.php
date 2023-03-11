@@ -80,9 +80,15 @@ class productController extends Controller
         $item = Product::find($id);
 
         $cats = category_for_products::all();
+        $wgh =[
+            1=>'250 گرم',
+            2=>'500 گرم',
+            3=>'750 گرم',
+            4=>'1 کیلو گرم',
+        ];
 
         $selected = $item->category()->get()[0];
-        return view('Admin.Shop.Products.form', compact('item', 'cats', 'selected'));
+        return view('Admin.Shop.Products.form', compact('item', 'cats', 'selected' ,'wgh'));
     }
 
     public function edit_save(Request $request, int $id)
@@ -126,7 +132,8 @@ class productController extends Controller
         $item->robusta = $request->input('robusta');
         $item->arabica = $request->input('arabica');
         $item->cat_id = $request->input('cat_id');
-        $item->weight = intval($request->input('weight'));
+        $item->weight = $request->input('weight');
+        $item->machine = $request->input('machine');
         $item->save();
         return redirect()->route('list_Product')->with(session()->flash('success', 'عملیات با موفقیت انجام شد.'));
     }

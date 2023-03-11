@@ -24,11 +24,16 @@ class product extends Model
     ];
 
     protected $casts = [
-        'weight'=>weightCast::class,
+//        'weight'=>weightCast::class,
         ];
 
     public function Category()
     {
         return $this->belongsTo(category_for_products::class , 'cat_id');
+    }
+
+    public function order()
+    {
+        return $this->belongsToMany(order::class , 'order_products' , 'product_id','order_id');
     }
 }

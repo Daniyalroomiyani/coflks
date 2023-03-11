@@ -8,24 +8,99 @@
 
             <div class="box">
 
-                <h3> 100 عربیکا</h3>
+                <h3> {{$product->name}}</h3>
                 <p>
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                    و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                    {{$product->caption}}
                 </p>
                 <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
-            </div>
-
-
-            <div class="box" style="flex:40%">
-                <span class="price"> {{number_format(50000) }} تومان</span>
-                <img src="{{asset('images/p-1.jpg')}}" alt="">
-
 
             </div>
 
+
+            <div class="box" style="flex:10%">
+                {{--                <span class="price"> {{number_format($product->price) }} تومان</span>--}}
+                <img src="{{asset('storage/images/shop/product').'/'.$product->pic}}" alt="">
+
+
+            </div>
+
+
+        </div> <!-- box-container -->
+        <section class="review" id="review">
+            {{--            <h1 class="heading"> <span> ویژگی ها </span> دیگر </h1>--}}
+            <div class="box-container">
+
+
+                <div class="box">
+                    <h3>وزن بسته</h3>
+
+                    <p>
+                        {{$product->weight}} </p>
+                </div>
+                <div class="box">
+                    <h3>قیمت</h3>
+
+                    <p>
+                        {{number_format($product->price) }} تومان
+                    </p>
+                </div>
+
+                @if(( !($product->arabica==0 && $product->robosta ==0)))
+                    <div class="box">
+                        <h3>آسیاب برای</h3>
+
+                        <p>
+                            {{$product->machine}}
+                        </p>
+                    </div>
+                    <div class="box">
+                        <h3>درصد عربیکا</h3>
+
+                        <p>
+                            @if(isset($product->arabica))
+                                {{$product->arabica}}
+                            @else
+                                0
+                                ٪
+                            @endif
+                        </p>
+                    </div>
+                    <div class="box">
+                        <h3>درصد ربوستا</h3>
+
+                        <p>
+                            @if(isset($product->robosta))
+                                {{$product->robosta}}
+                            @else
+                                0
+                                ٪
+                            @endif
+                        </p>
+                    </div>
+
+                @endif
+            </div> <!-- box-container -->
+
+        </section>
+
+
+        </div> <!-- box-container -->
+        <h1 class="heading"> محصولات <span>مشابه</span></h1>
+
+        <div class="box-container">
+
+
+            @foreach($simProducts as $pr)
+
+                <div class="box">
+                    <span class="price"> {{number_format($pr->price) }} تومان</span>
+                    <img src="{{asset('storage/images/shop/product').'/'.$pr->pic}}" alt="">
+                    <h3>  {{$pr->name }} -- {{$pr->weight}}</h3>
+
+                    <a href="#" class="btn">خرید</a>
+                    <a href="{{route('product.front.post' , $pr->id)}}" class="btn">اطلاعات بیشتر</a>
+                </div>
+            @endforeach
 
         </div> <!-- box-container -->
 

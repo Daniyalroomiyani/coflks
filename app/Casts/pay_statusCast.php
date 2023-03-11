@@ -2,10 +2,9 @@
 
 namespace App\Casts;
 
-use App\utility\weight;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
-class weightCast implements CastsAttributes
+class pay_statusCast implements CastsAttributes
 {
     /**
      * Cast the given value.
@@ -19,10 +18,9 @@ class weightCast implements CastsAttributes
     public function get($model, string $key, $value, array $attributes)
     {
         $a = [
-            '1'=>new weight(1,'250 گرم'),
-            '2'=>new weight(2 ,'500 گرم'),
-            '3'=>new weight(3,'750 گرم'),
-            '4'=>new weight(4, 'کیلوگرم'),
+            'success'=>'پرداخت شده',
+            'failed'=>'پرداخت نشده',
+            'Pending'=>'در انتظار پرداخت',
         ];
         return $a[$value];
     }
@@ -39,6 +37,5 @@ class weightCast implements CastsAttributes
     public function set($model, string $key, $value, array $attributes)
     {
         return $value;
-
     }
 }

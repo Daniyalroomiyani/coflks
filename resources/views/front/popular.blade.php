@@ -6,10 +6,10 @@
             <div class="box">
                 <span class="price"> {{number_format($pr->price) }} تومان</span>
                 <img src="{{asset('storage/images/shop/product').'/'.$pr->pic}}" alt="">
-                <h3>  {{$pr->name }} -- {{$pr->weight->name}}</h3>
+                <h3>  {{$pr->name }} -- {{$pr->weight}}</h3>
 
                 <a href="#" class="btn">خرید</a>
-                <a href="#" class="btn">اطلاعات بیشتر</a>
+                <a href="{{route('product.front.post', $pr->id)}}" class="btn">اطلاعات بیشتر</a>
             </div>
         @endforeach
 

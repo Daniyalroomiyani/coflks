@@ -74,25 +74,34 @@
                                                        value="{{ old('count',isset($item) ? $item->count: '') }}"
                                                        required="required" type="text">
                                             </div>
+                                        </div>  <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="machine">آسیاب
+                                                برای
+                                                <span
+                                                    class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="machine" class="form-control col-md-7 col-xs-12"
+                                                       data-validate-length-range="6" data-validate-words="2"
+                                                       name="machine"
+                                                       value="{{ old('machine',isset($item) ? $item->machine: '') }}"
+                                                       required="required" type="text">
+                                            </div>
                                         </div>
 
-
                                         <div class="item form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cat_id">وزن
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="weight">وزن
 
 
                                             </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
-                                                <select name="weight" class="form-control select-city"
-                                                        id="city_id">
-
-                                                    <option  value="1"  {{isset($item) && $item->weight->id == 1?'selected' :''}}>250 گرم</option>
-                                                    <option  value="2" {{isset($item) && $item->weight->id == 2?'selected' :''}}>500 گرم</option>
-                                                    <option  value="2" {{isset($item) && $item->weight->id == 3?'selected' :''}}>750 گرم</option>
-                                                    <option  value="4" {{isset($item) && $item->weight->id == 4?'selected' :''}}>1 کیلوگرم</option>
-                                                </select>
-
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="weight" class="form-control col-md-7 col-xs-12"
+                                                       data-validate-length-range="6" data-validate-words="2"
+                                                       name="weight"
+                                                       value="{{ old('weight',isset($item) ? $item->weight: '') }}"
+                                                       required="required" type="text">
                                             </div>
+
                                         </div>
 
 

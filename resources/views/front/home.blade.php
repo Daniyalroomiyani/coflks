@@ -5,7 +5,7 @@
         <p>
            {{$item->about}}
         </p>
-        <a href="#" class="btn">سفارش میدم</a>
+{{--        <a href="#" class="btn">سفارش میدم</a>--}}
     </div>
 
     <div class="image">
