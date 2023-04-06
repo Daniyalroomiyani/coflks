@@ -6,35 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\category_for_products;
 use App\Models\Config;
 use App\Models\product;
+use App\utility\RenderData;
 use Illuminate\Http\Request;
 
 class productscontroller extends Controller
 {
     public function index()
     {
-        $config = Config::all();
-
-        if ($config == null || count($config) == 0)
-            $config = Config::create([
-                'about' => '',
-                'phone' => '',
-                'Email' => '',
-                'instagram' => '',
-                'telegram' => '',
-                'address' => '',
-                'pics' => [
-                    'up' => '',
-                    'down' => '',
-                    'backG' => '',
-                    'icon' => '',
-                    'step1' => '',
-                    'step2' => '',
-                    'step3' => '',
-                    'step4' => ''
-                ],
-            ]);
-
-        $item = $config[0];
+        $item = RenderData::getMainData();
+        ;
 
         $cats = category_for_products::all();
 

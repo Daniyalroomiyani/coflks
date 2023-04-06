@@ -52,21 +52,22 @@ Route::namespace('App\Http\Controllers\front')->group(function () {
 
             });
         });
-//        //orders
-//        Route::prefix('order')->group(function (){
-//            Route::get('/{id}', 'orderscontroller@buy')->name('shop.front.buy');
-//            Route::post('/{id}', 'orderscontroller@do_buy')->name('shop.front.do.buy');
-////            Route::group('/{id}', 'orderscontroller@do_buy')->name('front.shop.payment');
-//            Route::get('/Factor/{id}', 'orderscontroller@GetFactor')->name('GetFactor_order_Front');
-//
-//        });
-//        //payments
-//        Route::prefix('pay')->group(function (){
-//            Route::get('/{id}', 'PaymentOrder@pay')->name('shop.front.buy.pay');
-//            Route::get('result/{item}', 'PaymentOrder@result')->name('shop.front.do.buy.result');
-////            Route::group('/{id}', 'orderscontroller@do_buy')->name('front.shop.payment');
-//
-//        });
+        //orders
+        Route::prefix('order')->group(function (){
+            Route::get('/checkout', 'orderscontroller@checkout')->name('shop.front.checkout')->middleware('card');
+            Route::post('/checkout', 'orderscontroller@confirm')->name('shop.front.confirmOrder')->middleware('card');
+            Route::get('/add/{id}', 'orderscontroller@add')->name('shop.front.addOrder');
+            Route::get('/del/{id}', 'orderscontroller@del')->name('shop.front.delOrder')->middleware('card');
+//            Route::get('/confirm', 'orderscontroller@confirm')->name('shop.front.confirmOrder')->middleware('card');
+
+        });
+        //payments
+        Route::prefix('pay')->group(function () {
+            Route::get('/{id}', 'paymentController@pay')->name('pay');
+            Route::get('result/{item}', 'paymentController@result')->name('shop.front.do.buy.result');
+//            Route::group('/{id}', 'orderscontroller@do_buy')->name('front.shop.payment');
+
+        });
 
 
     });

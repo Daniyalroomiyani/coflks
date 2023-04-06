@@ -12,7 +12,7 @@
                 <p>
                     {{$product->caption}}
                 </p>
-                <a href="#" class="btn">خرید</a>
+                <a href="{{route('shop.front.addOrder', $product->id)}}" class="btn">خرید</a>
 
             </div>
 
@@ -58,7 +58,7 @@
 
                         <p>
                             @if(isset($product->arabica))
-                                {{$product->arabica}}
+                                {{$product->arabica}} ٪
                             @else
                                 0
                                 ٪
@@ -69,8 +69,8 @@
                         <h3>درصد ربوستا</h3>
 
                         <p>
-                            @if(isset($product->robosta))
-                                {{$product->robosta}}
+                            @if(isset($product->robusta))
+                                {{$product->robusta}} ٪
                             @else
                                 0
                                 ٪
@@ -97,7 +97,7 @@
                     <img src="{{asset('storage/images/shop/product').'/'.$pr->pic}}" alt="">
                     <h3>  {{$pr->name }} -- {{$pr->weight}}</h3>
 
-                    <a href="#" class="btn">خرید</a>
+                    <a href="{{route('shop.front.addOrder' , $pr->id)}}" class="btn">خرید</a>
                     <a href="{{route('product.front.post' , $pr->id)}}" class="btn">اطلاعات بیشتر</a>
                 </div>
             @endforeach

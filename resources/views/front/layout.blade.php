@@ -11,9 +11,9 @@
 
     <!-- cusotm css file link -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/checkout.css')}}">
 
     <link rel="icon" href="{{asset("images/logo.PNG")}}" type="image/ico"/>
-
 
     <!-- PWA  -->
     <meta name="theme-color" content="#6777ef"/>
