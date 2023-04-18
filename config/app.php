@@ -183,11 +183,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Shetabit\Payment\Provider\PaymentServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
-
-        /*
+        niklasravnsborg\LaravelPdf\PdfServiceProvider::class,        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
@@ -211,6 +211,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'Payment' => Shetabit\Payment\Facade\Payment::class,
+        'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

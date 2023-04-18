@@ -144,12 +144,18 @@ class paymentController extends Controller
             $transaction->status = 'success';
             $item->status = 'process';
 
+            foreach ($item->products()->get() as $pr)
+            {
+                $pr->count--;
+                $pr->save();
+            }
             $item->save();
             $transaction->save();
+
             Cookie::expire('coflksOrderid');
 
             // TODo Send Factor to user ....
-            
+
             return view('front.shop.orders.Result', compact('transaction', 'item'));
 
 

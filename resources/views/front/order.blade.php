@@ -23,7 +23,7 @@
 
             <textarea name="txt" id="txt" cols="30" rows="10" placeholder="نظر شما"></textarea>
 
-            <input type="submit" value="ثبت سفارش" class="btn">
+            <input type="submit" value="ثبت " class="btn">
 
         </form>
 

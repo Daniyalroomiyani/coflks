@@ -8,8 +8,10 @@
                 <img src="{{asset('storage/images/shop/product').'/'.$pr->pic}}" alt="">
                 <h3>  {{$pr->name }} -- {{$pr->weight}}</h3>
 
-                <a href="{{route('shop.front.addOrder' , $pr->id)}}" class="btn">خرید</a>
-                <a href="{{route('product.front.post', $pr->id)}}" class="btn">اطلاعات بیشتر</a>
+                @if($pr->count > 0)
+                    <a href="{{route('shop.front.addOrder' , $pr->id)}}" class="btn">خرید</a>
+                @endif
+                 <a href="{{route('product.front.post', $pr->id)}}" class="btn">اطلاعات بیشتر</a>
             </div>
         @endforeach
 

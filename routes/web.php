@@ -277,24 +277,24 @@ Route::prefix('panel')->middleware("guest")->group(function () {
     });
 //
 //
-//    //Orders
-//    Route::namespace('App\Http\Controllers\admin')->prefix('order')->group(function () {
-//        Route::get('/', 'OrderController@index')->name('list_Order');
+    //Orders
+    Route::namespace('App\Http\Controllers\admin')->prefix('order')->group(function () {
+        Route::get('/', 'OrderController@index')->name('list_Order');
 //        Route::get('/add/{id}', 'OrderController@add')->name('add_Order');
 //        Route::post('/add/{id}', 'OrderController@save')->name('save_Order');
-//        Route::get('/edit/{id}', 'OrderController@edit')->name('edit_Order');
-//        Route::post('/edit/{id}', 'OrderController@edit_save')->name('edit_save_Order');
-//        Route::get('/del/{id}', 'OrderController@del')->name('del_Order');
-//
-//        Route::get('/check/{id}', 'OrderController@check')->name('check_Order');//ordrer ID
-//        Route::get('/final/{id}', 'OrderController@final')->name('final_save_order');//id ==> Order id
-//        Route::get('/get_factor/{id}', 'OrderController@get_factor')->name('get_factor_order');//id ==> Order id
-////        Route::get('/confirm/{id}', 'OrderController@confirm')->name('confirm_order');//id ==> Order id
-//        Route::post('/check/{id}', 'OrderController@confirm')->name('confirm_tracing_ID_order');//id ==> Order id
-//
-//
-//    });
-//
+        Route::get('/edit/{id}', 'OrderController@edit')->name('edit_Order');
+        Route::post('/edit/{id}', 'OrderController@edit_save')->name('edit_save_Order');
+        Route::get('/del/{id}', 'OrderController@del')->name('del_Order');
+
+        Route::get('/check/{id}', 'OrderController@check')->name('check_Order');//ordrer ID
+        Route::get('/final/{id}', 'OrderController@final')->name('final_save_order');//id ==> Order id
+        Route::get('/get_factor/{id}', 'OrderController@get_factor')->name('get_factor_order');//id ==> Order id
+//        Route::get('/confirm/{id}', 'OrderController@confirm')->name('confirm_order');//id ==> Order id
+        Route::post('/check/{id}', 'OrderController@confirm')->name('confirm_tracing_ID_order');//id ==> Order id
+
+
+    });
+
 //
 //    //Contacts
 //    Route::namespace('App\Http\Controllers\admin')->prefix('Contact')->group(function () {

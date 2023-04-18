@@ -4,6 +4,7 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Models\order;
+use App\Models\product;
 use App\utility\CookieHelper;
 use App\utility\RenderData;
 use Illuminate\Http\Request;
